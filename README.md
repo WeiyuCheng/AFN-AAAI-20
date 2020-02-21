@@ -24,9 +24,10 @@ The code has been tested running under Python 3.6. The required packages are as 
 * tensorflow == 1.10.0
 
 ## About Dataset
-Here we only provide the frappe and movielens datasets in this repository due to the large size of the other two datasets. For the Criteo and Avazu datasets, we have uploaded our preprocessed data to codalab. If you'd like to also run experiments on Criteo and Avazu datasets, **please first run the downloading script**:
+Here we only provide the Frappe and Movielens datasets in this repository due to the large size of the other two datasets. For the Criteo and Avazu datasets, we have uploaded our preprocessed data to codalab. If you'd like to also run experiments on Criteo and Avazu datasets, **please first run the downloading script**:
 ```
-python src/download_criteo_and_avazu.py
+cd src
+python download_criteo_and_avazu.py
 ```
 
 ## Example to Run the Codes
