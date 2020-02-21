@@ -113,10 +113,6 @@ def model_fn(features, labels, mode, params):
         layer1 = tf.einsum('bkf,fo->bko', embeddings_trans, weights) + biases
 
     with tf.variable_scope("Prediction"):
-        # if mode == tf.estimator.ModeKeys.TRAIN:
-        #     train_phase = True
-        # else:
-        #     train_phase = False
         interactions = tf.exp(layer1, name="restored_input")  # None*K*O
         interactions = batch_norm_layer(interactions, train_phase=train_phase,
                                        scope_bn='bn_inter')
@@ -124,11 +120,6 @@ def model_fn(features, labels, mode, params):
         interactions = tf.reshape(interactions, shape=[-1, FLAGS.embedding_size*FLAGS.hidden_size])  # None * (K*O)
         with tf.variable_scope("Deep-part"):
             deep_inputs = interactions
-            # if mode == tf.estimator.ModeKeys.TRAIN:
-            #     train_phase = True
-            # else:
-            #     train_phase = False
-
             if mode == tf.estimator.ModeKeys.TRAIN:
                 deep_inputs = tf.nn.dropout(deep_inputs, keep_prob=dropout[0])  # None * K
             for i in range(len(layers)):
