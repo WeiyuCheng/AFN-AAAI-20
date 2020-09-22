@@ -12,11 +12,17 @@ We propose the Adaptive Factorization Network (AFN), a new model that learns arb
 ## Citation 
 If you want to use our codes in your research, please cite:
 ```
-@article{cheng2019adaptive,
-  title={Adaptive Factorization Network: Learning Adaptive-Order Feature Interactions},
-  author={Cheng, Weiyu and Shen, Yanyan and Huang, Linpeng},
-  journal={arXiv preprint arXiv:1909.03276},
-  year={2019}
+@inproceedings{DBLP:conf/aaai/ChengSH20,
+  author    = {Weiyu Cheng and
+               Yanyan Shen and
+               Linpeng Huang},
+  title     = {Adaptive Factorization Network: Learning Adaptive-Order Feature Interactions},
+  booktitle = {The Thirty-Fourth {AAAI} Conference on Artificial Intelligence, {AAAI}
+               2020, New York, NY, USA,
+               February 7-12, 2020},
+  pages     = {3609--3616},
+  publisher = {{AAAI} Press},
+  year      = {2020},
 }
 ```
 ## Environment Requirement
